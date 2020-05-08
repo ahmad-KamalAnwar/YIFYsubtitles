@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -10,10 +11,10 @@ use ArrayAccess;
 
 /**
  * @ORM\Entity
+ * @ORM\Table(name="fos_user")
  * @UniqueEntity(fields="email", message="Email already taken")
- * @UniqueEntity(fields="username", message="Username already taken")
  */
-class Users implements UserInterface
+class Users extends BaseUser
 {
     /**
      * @ORM\Id
