@@ -12,7 +12,7 @@ framework:
     templating:
         engines: ['twig']
     #esi: ~
-    translator: ~
+    translator: { fallbacks: [ "en" ] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -82,3 +82,26 @@ fos_user:
     from_email:
         address: ahmad.kamal231096@gmail.com
         sender_name: ahmad.kamal231096
+
+easy_admin:
+    site_name: '<em style="font-size: 80%;">YITF</em> Movies'
+    design:
+        brand_color: '#1ABC9C'
+        color_scheme: 'light'
+        assets:
+            path: '/assets/backend/favicon.xxx'
+            mime_type: 'image/xxx'
+    list:
+        max_results: 30
+    entities:
+        # change the following to the namespaces of your own entities
+        Users:
+            class: AppBundle\Entity\Users
+        Languages:
+            class: AppBundle\Entity\Languages
+        Category:
+            class: AppBundle\Entity\Category
+        Movie:
+            class: AppBundle\Entity\Movie
+        Subtitles:
+            class: AppBundle\Entity\Subtitles
